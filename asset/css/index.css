@@ -1,0 +1,487 @@
+/* Variables */
+
+:root {
+    --primary: #FF9801;
+    --secondary: #246EB9;
+    --font-primary: 'Red Hat Display', sans-serif;
+    --font-secondary: 'Red Hat Display', cursive;
+}
+
+/* Normalize */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Globals */
+html {
+    font-size: 62.5%;
+    font-family: var(--font-primary);
+}
+
+body {
+    font-family: inherit;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* Media Queries */
+
+@media screen and (min-width:1024px) {
+    section .third__section h2 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:786px) {
+    header .navbar {
+        font-size: .8em;
+    }    
+
+    section .secondary__section h2 {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    section .third__section h2 {
+        font-size: 1em;
+    }
+
+    .about__us__title {
+        margin-top: 1.2rem;
+        font-size: 3.5em;
+        text-align: center;
+        color: var(--secondary);
+    }
+    
+    .about__us {
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+    .about__us__image {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .about__us__description p {
+        padding: 1rem;
+    }
+    
+    .about__us__description a {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .main__section {
+        flex-direction: column;
+    }
+    .main__section .main__section__title {
+        flex-grow: 1;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    
+    .main__section .main__section__form {
+        flex-grow: 1;
+    }
+
+    .about__us .about__us__image {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .secondary__section {
+        display: grid;
+        grid-column: auto;
+    }
+
+    .about__us .about__us__image {
+        width: 500px;
+    }
+
+    .niveles {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:320px) {
+    header .navbar {
+        flex-wrap: wrap;
+    }
+
+    .about__us .about__us__image {
+        width: 300px;
+    }
+    
+}
+
+/* Helpers */
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.background__color {
+    background-image: linear-gradient(to left bottom, #246eb9, #9b66c1, #eb569f, #ff6561, #ff9801);
+}
+/* Header & Navbar */
+
+ul {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    display: inline-block;
+}
+
+header .navbar {
+    min-height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    font-weight: bold;
+}
+
+picture .logo {
+    flex-basis: 30%;
+    width: 110px;
+}
+
+header .navbar__item {
+    flex-basis: 50%;
+    justify-content: space-evenly;
+}
+
+.navbar__item .navbar__item__link {
+    text-decoration: none;
+    font-size: 1.6em;
+    padding: 1rem;
+    transition: all .1s ease;
+    color: var(--primary);
+}
+
+.navbar__item .navbar__item__link:hover {
+    border-bottom: 2px solid #FF9801;
+}
+
+.navbar .subnavbar__item {
+    display: none;
+    position: absolute;
+}
+
+.navbar .navbar__item .navbar__item__title:hover .subnavbar__item {
+    display: block;
+}
+
+.subnavbar__item .subnavbar__item__link {
+    padding: 1.4rem;
+    font-size: 1.4em;
+    transition: all .3s ease-in-out;
+    background-color: #fff;
+}
+
+.subnavbar__item .subnavbar__item__link:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* Main section */
+
+.main__section {
+    padding: 5rem 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main__section .main__section__title {
+    color: #fff;
+    font-size: 6.0em;
+    flex-basis: 60%;
+}
+
+.main__section .main__section__form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5%;
+    box-shadow: 3px 3px 10px;
+    gap: 1rem;
+}
+
+.main__section__form .main__section__form__item {
+    border-radius: 20px;
+    border: 1px solid azure;
+    background-color: azure;
+    padding: 1rem;
+}
+
+.main__section__form--title {
+    align-items: center;
+    color: var(--primary);
+    font-size: 1.9em;
+    padding-bottom: 10px;
+}
+
+.main__section__form .main__section__form__item--label{
+    font-size: 1.4em;
+    gap: .6rem;
+}
+
+.main__section .main__section__form .main__section__form__politics {
+    justify-content: space-between;
+    align-items: stretch;
+    font-size: 1.4em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main__section__form .main__section__form__button {
+    justify-content: space-evenly;
+}
+
+.main__section__form .main__section__form__button--input {
+    background-color: #FF9801;
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Secondary section */
+
+.secondary__section {
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem;
+    border-radius: 7%;
+    box-shadow: 3px 3px 10px;
+
+}
+
+.secondary__section .secondary__section__img {
+    margin-top: 10px;
+    width: 130px;
+    height: auto;
+    flex-basis: 20%;
+}
+
+.secondary__section h2 {
+    color: var(--primary);
+    font-size: 1.8em;
+    padding-top: 1rem;
+    padding-bottom: .3rem;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+.secondary__section p {
+    padding: 1.2rem;
+    font-size: 1.3em;
+}
+
+/* Third section */
+
+.third__section {
+    padding: 10px;
+    font-size: 1.8em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../images/circle-scatter-haikei.svg);
+    background-size: cover;
+}
+
+.third__section .third__section__img {
+    width: 170px;
+    height: auto;
+    padding-top: 20px;
+}
+
+/* Footer */
+
+.footer {
+    display: grid; 
+    grid-template-areas: 
+    "logo contactanos sedes"
+    "socialMedia . .";
+    grid-template-columns: auto auto;
+    grid-template-rows: 60% 20% 20%;
+    justify-content: space-around;
+}
+
+.footer .footer__logo {
+    grid-area: logo;
+    width: 120px;
+}
+
+.footer .footer__social__media__img {
+    grid-area: socialMedia;
+    width: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.footer .footer__items__contactanos {
+    grid-area: contactanos;
+}
+
+.footer .footer__items__sedes {
+    grid-area: sedes;
+}
+
+.footer .footer__items h4 {
+    font-size: 1.9em;
+    color: var(--primary);
+}
+
+.footer .footer__items p {
+    font-size: 1.1em;
+}
+
+.footer .footer__items a {
+    font-size: 1.1em;
+    color: black;
+}
+
+
+/* Nuestro programa */
+
+/* Secondary section */
+
+.about__us__title {
+    margin-top: 1.2rem;
+    font-size: 3.5em;
+    text-align: center;
+    color: var(--secondary);
+}
+
+.about__us {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+picture .about__us__image {
+    width: 600px;
+    justify-content: center;
+}
+
+.about__us__description p {
+    font-size: 1.6em;
+    line-height: 3rem;
+}
+
+.about__us__description input {
+    background-color: #FF9801;
+    color: #fff;
+    border: .1px solid var(--primary);
+    padding: 16px 32px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.about__us__description a {
+    text-align: center;
+}
+
+/* Third section */
+
+.niveles__title {
+    margin-top: 1.5rem;
+    font-size: 3em;
+    text-align: center;
+    color: var(--primary);
+}
+
+.niveles__items {
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Sedes */
+
+.sedes__title {
+    color: #fff;
+    font-size: 6.0em;
+}
+
+.sedes {
+    margin-top: 2rem;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.sedes__items {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sedes__items__link {
+    border-radius: 25px;
+    background-color: #FF9801;
+    padding: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.sedes__description {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.sedes__image {
+    width: 360px;
+    margin-right: 2rem;
+    border-radius: 25px;
+}
+
+.sedes__floresta__title {
+    font-size: 3em;
+}
+
+.sedes__description p {
+    font-size: 2em;
+}
+
+/* Blog */
+
+.blog {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.blog__title {
+    font-size: 4em;
+    color: var(--primary);
+}
+
+.blog__description {
+    font-size: 2em;
+}
