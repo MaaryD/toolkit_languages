@@ -219,6 +219,11 @@ header .navbar__item {
     flex-basis: 60%;
 }
 
+.h1, h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .main__section .main__section__form {
     background-color: #fff;
     padding: 2rem;
@@ -480,8 +485,14 @@ picture .about__us__image {
 .blog__title {
     font-size: 4em;
     color: var(--primary);
+    font-weight: bold;
 }
 
 .blog__description {
     font-size: 2em;
+    margin-bottom: 3rem;
+}
+
+.row {
+    margin-bottom: 3rem;
 }
