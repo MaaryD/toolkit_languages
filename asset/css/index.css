@@ -496,3 +496,15 @@ picture .about__us__image {
 .row {
     margin-bottom: 3rem;
 }
+
+.btn {
+    padding: 16px 32px;
+    border-radius: 25px;
+    background-color: var(--primary);
+    border: var(--primary);
+}
+
+.h2, h2 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
